@@ -19,7 +19,6 @@ pipeline {
         GOOGLE_CLUSTER_ZONE = 'us-central1-a'
         KSA_NAME = 'ksa'
         KSA_NAMESPACE = 'dn'
-
        //docker image details
         IMAGE_URL = 'asia-south1-docker.pkg.dev/multi-micro-project/mutli-micro-repo/order-service-project'
 
