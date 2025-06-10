@@ -31,6 +31,8 @@ spec:
           value: "1"
         - name: KAFKA_CFG_PROCESS_ROLES
           value: "broker,controller"
+        - name: KAFKA_CFG_CONTROLLER_LISTENER_NAMES
+          value: "CONTROLLER"
         - name: KAFKA_BROKER_ID
           value: "1"
         - name: KAFKA_ZOOKEEPER_CONNECT
