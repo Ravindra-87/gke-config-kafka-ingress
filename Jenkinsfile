@@ -56,7 +56,6 @@ pipeline {
 
             }
         }*/
-
         //  Deploy to GKE using kubectl
         stage('Deploy to GKE') {
             steps {
