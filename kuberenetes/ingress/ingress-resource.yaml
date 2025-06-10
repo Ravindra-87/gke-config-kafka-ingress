@@ -1,0 +1,57 @@
+##https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.2.1/deploy/static/provider/cloud/deploy.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: k8s-ingress-static
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: purchasefuture.zapto.org
+      http:
+        paths:
+          - path: /ordersinfo
+            pathType: Exact
+            backend:
+              service:
+                name: order-project-service
+                port:
+                  number: 80
+          - path: /productsinfo
+            pathType: Exact
+            backend:
+              service:
+                name: product-project-service
+                port:
+                  number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: k8s-ingress-api
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: purchasefuture.zapto.org
+      http:
+        paths:
+          - path: /orders
+            pathType: Prefix
+            backend:
+              service:
+                name: order-project-service
+                port:
+                  number: 80
+          - path: /products
+            pathType: Prefix
+            backend:
+              service:
+                name: product-project-service
+                port:
+                  number: 80
