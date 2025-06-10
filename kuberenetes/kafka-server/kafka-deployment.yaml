@@ -20,10 +20,9 @@ spec:
         operator: "Equal"
         value: "true"
         effect: "NoSchedule"
-
       # Pin pod to the specific node (replace with your node label)
       nodeSelector:
-        kubernetes.io/hostname: <your-node-name>
+        kubernetes.io/hostname: gke-dev-cluster-default-pool-23d3fcfb-0xq9
 
       containers:
       - name: kafka
