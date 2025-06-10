@@ -67,6 +67,7 @@ pipeline {
                      
                         kubectl apply -f ./kuberenetes/kafka-server/deployment.yaml
                         kubectl apply -f ./kuberenetes/ingress/ingress-resource.yaml
+                        kubectl apply -f ./kuberenetes/kafka-server/service.yaml
                     """
                 }
             }
