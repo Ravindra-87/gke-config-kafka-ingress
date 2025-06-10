@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: kafka
   labels:
-    app: kafka-pod
+    app: kafka-server
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: kafka-pod
+      app: kafka-server
   template:
     metadata:
       labels:
-        app: kafka-pod
+        app: kafka-server
     spec:
       # Toleration to allow scheduling on tainted node
       tolerations:
