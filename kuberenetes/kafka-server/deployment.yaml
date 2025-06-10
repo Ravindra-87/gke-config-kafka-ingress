@@ -8,11 +8,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: kafka-server
+      app: kafka
   template:
     metadata:
       labels:
-        app: kafka-server
+        app: kafka
     spec:
       # Toleration to allow scheduling on tainted node
       tolerations:
