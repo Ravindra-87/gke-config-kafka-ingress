@@ -33,10 +33,12 @@ spec:
           value: "broker,controller"
         - name: KAFKA_CFG_CONTROLLER_LISTENER_NAMES
           value: "CONTROLLER"
-        - name: KAFKA_BROKER_ID
-          value: "1"
-        - name: KAFKA_ZOOKEEPER_CONNECT
-          value: "zookeeper:2181"
+        - name: KAFKA_CFG_LISTENERS
+          value: "PLAINTEXT://:9092,CONTROLLER://:9093"
+        - name: KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP
+          value: "PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT"
+        - name: KAFKA_CFG_CONTROLLER_QUORUM_VOTERS
+          value: "1@localhost:9093"
         - name: ALLOW_PLAINTEXT_LISTENER
           value: "yes"
         ports:
