@@ -30,17 +30,17 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', credentialsId: 'github-access-id', url: 'https://github.com/Ravindra-87/order-service.git'
+                git branch: 'main', credentialsId: 'github-access-id', url: 'https://github.com/Ravindra-87/gke-config-kafka-ingress.git'
             }
         }
-
+    /*
      stage('Build with Maven') {
             steps {
                 sh 'mvn clean install -DskipTests'
             }
         }
 
-     /*
+
         stage('Build Docker Image') {
             steps {
                 // Create and use a builder if not already
@@ -66,7 +66,7 @@ pipeline {
 
                         kubectl config set-context --current --namespace=$KSA_NAMESPACE
                      
-                        kubectl apply -f ./kuberenetes/kafka-server/kafka-deployment.yaml
+                        kubectl apply -f ./kuberenetes/kafka-server/deployment.yaml
                         kubectl apply -f ./kuberenetes/ingress/ingress-resource.yaml
                     """
                 }
