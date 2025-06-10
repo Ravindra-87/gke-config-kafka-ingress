@@ -40,7 +40,6 @@ pipeline {
             }
         }
 
-
         stage('Build Docker Image') {
             steps {
                 // Create and use a builder if not already

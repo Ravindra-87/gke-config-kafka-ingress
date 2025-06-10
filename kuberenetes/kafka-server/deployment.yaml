@@ -23,11 +23,14 @@ spec:
       # Pin pod to the specific node (replace with your node label)
       nodeSelector:
         kubernetes.io/hostname: gke-dev-cluster-default-pool-23d3fcfb-0xq9
-
       containers:
       - name: kafka
         image: bitnami/kafka:latest
         env:
+        - name: KAFKA_CFG_NODE_ID
+          value: "1"
+        - name: KAFKA_CFG_PROCESS_ROLES
+          value: "broker,controller"
         - name: KAFKA_BROKER_ID
           value: "1"
         - name: KAFKA_ZOOKEEPER_CONNECT
