@@ -4,6 +4,7 @@ metadata:
   name: kafka-kube-service
   namespace: dn
 spec:
+  type: ClusterIP
   selector:
     app: kafka # Matches your Kafka pod's label
   ports:
