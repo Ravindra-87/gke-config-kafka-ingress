@@ -38,7 +38,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: purchasefuture.zapto.org
+    - host: purchasingfuture.zapto.org
       http:
         paths:
           - path: /orders
