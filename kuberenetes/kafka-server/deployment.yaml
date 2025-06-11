@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kafka
+  namespace: dn
   labels:
     app: kafka-server
 spec:
@@ -23,6 +24,7 @@ spec:
       # Pin pod to the specific node (replace with your node label)
       nodeSelector:
         kubernetes.io/hostname: gke-dev-cluster-default-pool-18417ffe-kpvp
+      serviceAccountName: ksa
       containers:
       - name: kafka
         image: bitnami/kafka:latest
