@@ -8,5 +8,5 @@ spec:
   selector:
     app: kafka # Matches your Kafka pod's label
   ports:
-    - port: 9092        # Service port
+    - port: 80        # Service port
       targetPort: 9092  # Container port
