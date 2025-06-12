@@ -13,7 +13,7 @@ spec:
     - host: purchasingfuture.zapto.org
       http:
         paths:
-          - path: /ordersinfo
+          - path: /ordersinfo            
             pathType: Exact
             backend:
               service:

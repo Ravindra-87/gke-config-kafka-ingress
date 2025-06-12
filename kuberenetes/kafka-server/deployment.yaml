@@ -23,7 +23,7 @@ spec:
         effect: "NoSchedule"
       # Pin pod to the specific node (replace with your node label)
       nodeSelector:
-        kubernetes.io/hostname: gke-dev-cluster-default-pool-18417ffe-kpvp
+        kubernetes.io/hostname: gke-dev-cluster-default-pool-20a84c9b-bfg4
       serviceAccountName: ksa
       containers:
       - name: kafka
